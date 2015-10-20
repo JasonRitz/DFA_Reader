@@ -1,5 +1,5 @@
 # DFA_Reader
-A Program that will confirm if a string is in the language of a specified DFA. The DFA is inputed from a file called DFA.txt and the string to test is input by the user at run time.  
+A Program that will confirm if a string is in the language of a specified DFA. The DFA is input from a file called DFA.txt and the string to test is input by the user at run time.  
 
 
 
