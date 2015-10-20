@@ -8,14 +8,14 @@ description_line = f.readline()
 f.close()
 
 
-Q = int(dfa_info_line[0])
+number_of_states = int(dfa_info_line[0])
 sigma = dfa_info_line[1].split(',') # remember this is a string not an int 
 accepting_states = dfa_info_line[2] # you can check str(current_position) in accepting_states will = true or false
 
 
 x = 0
 size = len(delta_line) - 1
-delta = [[9,9] for i in range(Q)]
+delta = [[9,9] for i in range(number_of_states)]
 delta_line.reverse()
 
 # Load the 2D array with the delta function. if sigma = (a, b,...z) convert to
