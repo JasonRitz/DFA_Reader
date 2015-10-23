@@ -8,18 +8,22 @@ description_line = f.readline()
 f.close()
 
 
+
+
 number_of_states = int(dfa_info_line[0])
 sigma = dfa_info_line[1].split(',')  
 accepting_states = dfa_info_line[2] 
-
-
 x = 0
 size = len(delta_line) - 1
 delta = [[9,9] for i in range(number_of_states)]
 delta_line.reverse()
 
-# Load the 2D array with the delta function. if sigma = (a, b,...z) convert to
-# int (1, 2,...,n)
+
+
+
+
+# If sigma = (a, b,...z) convert to int (0, 1,...,n)
+# Load the 2D array with the delta function.
 if 'a' in sigma:
     while x < size:
         index_row = int(delta_line.pop())
@@ -36,15 +40,17 @@ else:
         delta[index_row][index_column] = int(delta_line.pop())
         x+=3
 
-# Print DFA description and get string from user input 
-current_position = 0
+
+
+
+# Print DFA description and get string from user input
 input_string = ""
 exit_test = 0
 print description_line, '\n'
 
-while (input_string != 'x!'):
-    print '\ntest a string from the alphabet ', sigma, '\n'
-    input_string = raw_input('Input a string or "!" to number_of_statesuit: ')
+while (input_string != '!'):
+    print '\nTest a string from the alphabet ', sigma, '\n'
+    input_string = raw_input('Input a string or "!" to quit: ')
 
     if (input_string == '!'):
         break
@@ -57,6 +63,9 @@ while (input_string != 'x!'):
         break
     original_input_string = input_string
 
+
+
+
 # if sigma is (a,b,...,z) convert input_string to (0,1,...,n)
     if 'a' in input_string or 'b' in input_string:
         holder = []
@@ -66,9 +75,13 @@ while (input_string != 'x!'):
 
 
 
-# Run through the DFA machine 
+
+# Run through the DFA machine
+    current_position = 0
     for i in range(0, len(input_string)):
         current_position = delta[current_position][int(input_string[i])]
+
+
 
 
 # Print Result
