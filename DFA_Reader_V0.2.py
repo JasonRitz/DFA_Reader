@@ -15,7 +15,7 @@ accepting_states = dfa_info_line[2]
 
 x = 0
 size = len(delta_line) - 1
-delta = [[9,9] for i in range(number_of_states)]
+delta = [[9,9] for i in range(0, number_of_states+1)]
 delta_line.reverse()
 
 # Load the 2D array with the delta function. if sigma = (a, b,...z) convert to
@@ -44,7 +44,7 @@ print description_line, '\n'
 
 while (input_string != 'x!'):
     print '\ntest a string from the alphabet ', sigma, '\n'
-    input_string = raw_input('Input a string or "!" to number_of_statesuit: ')
+    input_string = raw_input('Input a string or "!" to quit: ')
 
     if (input_string == '!'):
         break
