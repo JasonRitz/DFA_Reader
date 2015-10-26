@@ -1,3 +1,11 @@
+# Jason Ritz
+# CS311
+# Project 1
+# This program reads in a DFA from the file DFA.txt and lets the user test
+# strings to see if they are in the language of the DFA. 
+
+
+
 # Open file and read in DFA
 f = open('DFA.txt', 'r')
 dfa_info_line = f.readline()
